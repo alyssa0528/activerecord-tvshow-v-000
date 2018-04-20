@@ -4,7 +4,7 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    Show.pluck("name").where maximum("rating")
+    Show.order("rating").name
   end
 
   def self.lowest_rating
